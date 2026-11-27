@@ -1,0 +1,61 @@
+-- ==========================================
+-- HR ANALYTICS DASHBOARD
+-- HR KPI MEASURES
+-- ==========================================
+
+-- 1. Total Employees
+Total Employees KPI =
+COUNT('HR_Analytics Data'[EmpID])
+
+
+-- 2. Total Attrition
+Total Attrition KPI =
+SUM('HR_Analytics Data'[Attrition_Count])
+
+
+-- 3. Attrition Rate
+Attrition Rate KPI =
+[Attrition_Rate]
+
+
+-- 4. Active Employees
+Active Employees KPI =
+[Total Employees KPI] - [Total Attrition KPI]
+
+
+-- 5. Employee Retention Rate
+Employee Retention Rate KPI =
+DIVIDE(
+    [Active Employees KPI],
+    [Total Employees KPI],
+    0
+)
+
+
+-- 6. Average Employee Age
+Average Age KPI =
+AVERAGE('HR_Analytics Data'[Age])
+
+
+-- 7. Average Monthly Salary
+Average Salary KPI =
+AVERAGE('HR_Analytics Data'[MonthlyIncome])
+
+
+-- 8. Average Years at Company
+Average Experience KPI =
+AVERAGE('HR_Analytics Data'[YearsAtCompany])
+
+
+-- 9. Attrition Percentage
+Attrition Percentage KPI =
+DIVIDE(
+    [Total Attrition KPI],
+    [Total Employees KPI],
+    0
+)
+
+
+-- 10. Employee Retention Percentage
+Employee Retention Percentage KPI =
+[Employee Retention Rate KPI]

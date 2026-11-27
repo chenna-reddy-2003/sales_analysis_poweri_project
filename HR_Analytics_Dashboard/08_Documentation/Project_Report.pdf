@@ -1,0 +1,152 @@
+# HR ANALYTICS DASHBOARD USING POWER BI
+## Project Report
+
+### 1. Project Overview
+The HR Analytics Dashboard is a data analytics project developed using Microsoft Power BI. It helps analyze employee information, understand workforce trends, and identify employee attrition patterns through interactive visualizations.
+
+### 2. Project Objective
+- Analyze employee data.
+- Calculate total employees and attrition rate.
+- Understand employee attrition by age, gender, education and job role.
+- Analyze salary and employee experience.
+- Support HR teams in making data-driven decisions.
+
+### 3. Dataset Description
+**Dataset Name:** HR_Analytics.csv
+
+Important columns:
+- EmpID
+- Age
+- Gender
+- Department
+- JobRole
+- MonthlyIncome
+- YearsAtCompany
+- Attrition_Count
+- EducationField
+- JobSatisfaction
+- SalarySlab
+- AgeGroup
+
+### 4. Tools and Technologies
+- Microsoft Power BI Desktop
+- Power Query Editor
+- DAX (Data Analysis Expressions)
+- CSV Dataset
+
+### 5. Data Cleaning
+The following checks are recommended:
+- Check missing values.
+- Check duplicate employee IDs.
+- Correct column data types.
+- Review inconsistent category names.
+- Validate numerical columns.
+
+Only mark these steps as completed if you actually performed them in Power BI.
+
+### 6. Data Modeling
+The current report uses the table `HR_Analytics Data`.
+
+Important fields include EmpID, Age, Department, JobRole, MonthlyIncome and Attrition_Count.
+
+Check EmpID uniqueness and blank values before treating it as a unique employee key.
+
+### 7. DAX Measures
+
+**Total Employees**
+```dax
+Total Employees =
+COUNT('HR_Analytics Data'[EmpID])
+```
+
+**Total Attrition**
+```dax
+Total Attrition =
+SUM('HR_Analytics Data'[Attrition_Count])
+```
+
+**Average Age**
+```dax
+Average Age =
+AVERAGE('HR_Analytics Data'[Age])
+```
+
+**Average Salary**
+```dax
+Average Salary =
+AVERAGE('HR_Analytics Data'[MonthlyIncome])
+```
+
+**Average Years at Company**
+```dax
+Average Years at Company =
+AVERAGE('HR_Analytics Data'[YearsAtCompany])
+```
+
+**Calculated Attrition Rate**
+```dax
+Calculated Attrition Rate =
+DIVIDE(
+    [Total Attrition],
+    [Total Employees],
+    0
+)
+```
+
+Format the rate measure as Percentage in Power BI. The existing PBIX already uses a measure named `Attrition_Rate`; do not create a conflicting measure with that name.
+
+### 8. Dashboard Visualizations
+The dashboard includes:
+
+1. Employee Count – Card
+2. Attrition – Card
+3. Attrition Rate – Card
+4. Average Age – Card
+5. Average Salary – Card
+6. Average Years – Card
+7. Attrition by Education – Donut Chart
+8. Attrition by Age – Column Chart
+9. Attrition by Job Role – Bar Chart
+10. Attrition by Salary – Bar Chart
+11. Attrition by Years at Company – Area Chart
+12. Attrition by Gender – Treemap
+13. Job Role and Job Satisfaction – Matrix
+14. Department – Slicer
+
+### 9. Testing and Validation
+- Validate employee count against the source data.
+- Verify total attrition.
+- Check attrition rate calculation.
+- Validate average salary and age.
+- Test department slicer.
+- Check all chart interactions.
+- Confirm that KPI values respond correctly to filters.
+
+### 10. Business Insights
+The dashboard can help HR teams investigate:
+- Which age groups have higher attrition.
+- Which job roles show more employee exits.
+- How salary bands relate to attrition.
+- Whether attrition differs by gender or education.
+- How employee tenure relates to attrition.
+
+Add actual numerical findings only after checking your dashboard results.
+
+### 11. Project Benefits
+- Easy employee data analysis.
+- Interactive HR reporting.
+- Better understanding of attrition patterns.
+- Faster KPI monitoring.
+- Support for data-driven HR decisions.
+
+### 12. Conclusion
+The HR Analytics Dashboard demonstrates how Microsoft Power BI can transform employee data into meaningful visual reports. It provides HR teams with an interactive way to monitor workforce KPIs and investigate attrition patterns.
+
+This project helped develop practical skills in Power BI, Power Query, data modeling, DAX measures and dashboard development.
+
+### 13. Future Enhancements
+- Add more HR KPIs.
+- Create additional department-level analysis.
+- Publish the report to Power BI Service.
+- Configure and test scheduled refresh.
+- Add more detailed business insights.

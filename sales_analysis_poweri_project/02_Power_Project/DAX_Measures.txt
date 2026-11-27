@@ -1,0 +1,33 @@
+DAX MEASURES Project: Sales Analysis Dashboard using Power BI
+
+Dataset table: Sheet1 Available columns: - Order Date - Ship Date -
+Sales - Profit
+
+1.  Total Sales Total Sales = SUM(Sheet1[Sales])
+
+2.  Total Profit Total Profit = SUM(Sheet1[Profit])
+
+3.  Average Sales Average Sales = AVERAGE(Sheet1[Sales])
+
+4.  Average Profit Average Profit = AVERAGE(Sheet1[Profit])
+
+5.  Profit Margin (%) Profit Margin (%) = DIVIDE([Total Profit], [Total
+    Sales], 0) * 100
+
+6.  Total Records Total Records = COUNTROWS(Sheet1)
+
+HOW TO ADD THESE MEASURES 1. Open Sales_Analysis_Dashboard.pbix in Power
+BI Desktop. 2. In the Fields/Data pane, select the Sheet1 table. 3. Go
+to Modeling > New measure. 4. Copy one measure formula at a time
+(including its measure name) into the formula bar. 5. Press Enter. 6.
+Repeat for the remaining measures.
+
+IMPORTANT NOTES - These formulas use the column names in the sample
+dataset provided for this project. - Total Records counts rows; it is
+not the same as distinct orders because this dataset does not contain an
+Order ID column. - Format Total Sales, Total Profit, Average Sales, and
+Average Profit as Currency if appropriate for your project. - Format
+Profit Margin (%) as a percentage only if you remove ‘* 100’ from the
+formula. Otherwise keep it as a numeric value with two decimal places. -
+These are suggested measures for the provided sample dataset, not
+measures extracted from the original PBIX file.

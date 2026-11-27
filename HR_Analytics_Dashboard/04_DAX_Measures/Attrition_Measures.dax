@@ -1,0 +1,47 @@
+-- ==========================================
+-- HR ANALYTICS DASHBOARD
+-- ATTRITION MEASURES
+-- Tool: Power BI Desktop
+-- Table: HR_Analytics Data
+-- ==========================================
+
+-- 1. Total Attrition Count
+Total Attrition =
+SUM('HR_Analytics Data'[Attrition_Count])
+
+
+-- 2. Calculated Attrition Rate
+Calculated Attrition Rate =
+DIVIDE(
+    [Total Attrition],
+    [Total Employees],
+    0
+)
+
+
+-- 3. Active Employees
+Active Employees =
+[Total Employees] - [Total Attrition]
+
+
+-- 4. Attrition Percentage
+Attrition Percentage =
+DIVIDE(
+    [Total Attrition],
+    [Total Employees],
+    0
+) * 100
+
+
+-- 5. Employee Retention Rate
+Employee Retention Rate =
+DIVIDE(
+    [Active Employees],
+    [Total Employees],
+    0
+)
+
+
+-- 6. Employee Retention Percentage
+Employee Retention Percentage =
+[Employee Retention Rate] * 100

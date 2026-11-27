@@ -1,0 +1,54 @@
+-- ==========================================
+-- HR ANALYTICS DASHBOARD
+-- Employee Measures
+-- Tool: Power BI
+-- ==========================================
+
+-- 1. Total Employees
+Total Employees =
+COUNT('HR_Analytics Data'[EmpID])
+
+
+-- 2. Unique Employees
+Unique Employees =
+DISTINCTCOUNT('HR_Analytics Data'[EmpID])
+
+
+-- 3. Average Employee Age
+Average Age =
+AVERAGE('HR_Analytics Data'[Age])
+
+
+-- 4. Average Monthly Salary
+Average Salary =
+AVERAGE('HR_Analytics Data'[MonthlyIncome])
+
+
+-- 5. Average Years at Company
+Average Years at Company =
+AVERAGE('HR_Analytics Data'[YearsAtCompany])
+
+
+-- 6. Total Monthly Salary
+Total Monthly Salary =
+SUM('HR_Analytics Data'[MonthlyIncome])
+
+
+-- 7. Minimum Employee Age
+Minimum Age =
+MIN('HR_Analytics Data'[Age])
+
+
+-- 8. Maximum Employee Age
+Maximum Age =
+MAX('HR_Analytics Data'[Age])
+
+
+-- 9. Minimum Monthly Salary
+Minimum Salary =
+MIN('HR_Analytics Data'[MonthlyIncome])
+
+
+-- 10. Maximum Monthly Salary
+Maximum Salary =
+MAX('HR_Analytics Data'[MonthlyIncome])
